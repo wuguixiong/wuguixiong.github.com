@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 ###1. 简介
   在浏览器中，有不少事件或者函数调用频率会非常高，如mousemove，resize、scroll等，针对这种事件绑定函数时，函数可能会被频繁调用。如果绑定的函数比较复杂，性能会变得很差。
