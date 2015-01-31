@@ -9,12 +9,13 @@ tags: []
 ###1. 标签使用不正确
 现象代码如下：  
 
-```html
-<ul>
-	<li>aaa</li>
-	<span>bbb</span>
-</ul>
-```
+
+
+	<ul>
+		<li>aaa</li>
+		<span>bbb</span>
+	</ul>
+
 
 Chrome、IE标准模式 展示如下：
 ![picture in chrome](/img/li-bug-chrome.jpg)
@@ -29,48 +30,48 @@ IE兼容模式展示如下：
 现象代码如下  
 
 
-```html
-<!doctype html>
-<html>
-	<head>
-	   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	   <style>
-		   #container {
-				position: relative;
-		   }
 
-		   #box1 {
-				position: absolute;
-				top: 100px;
-				left: 210px;
-				width: 200px;
-				height: 200px;
-				background-color: yellow;
-				z-index: 20;
-		   }
+	<!doctype html>
+	<html>
+		<head>
+		   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		   <style>
+			   #container {
+					position: relative;
+			   }
 
-		   #box2 {
-				position: absolute;
-				top: 50px;
-				left: 160px;
-				width: 200px;
-				height: 200px;
-				background-color: green;
-				z-index: 10;
-		   }
-	   </style>
-	</head>
-	<body>
-	   <div id="container">
-		   <div id="box1">这个box应该在上面</div>
-	   </div>
+			   #box1 {
+					position: absolute;
+					top: 100px;
+					left: 210px;
+					width: 200px;
+					height: 200px;
+					background-color: yellow;
+					z-index: 20;
+			   }
 
-	   <div id="box2">
-		   这个box应该在下面，IE浏览器会对定位元素产生一个新的stacking context ，甚至当元素 z-index的为“auto”。
-	   </div>
-	</body>
-</html>
-```
+			   #box2 {
+					position: absolute;
+					top: 50px;
+					left: 160px;
+					width: 200px;
+					height: 200px;
+					background-color: green;
+					z-index: 10;
+			   }
+		   </style>
+		</head>
+		<body>
+		   <div id="container">
+			   <div id="box1">这个box应该在上面</div>
+		   </div>
+
+		   <div id="box2">
+			   这个box应该在下面，IE浏览器会对定位元素产生一个新的stacking context ，甚至当元素 z-index的为“auto”。
+		   </div>
+		</body>
+	</html>
+
 
 Chrome、IE标准模式 展示如下：
 ![picture in chrome](/img/zindex-bug-chrome.jpg)
@@ -85,29 +86,28 @@ IE兼容模式展示如下：
 现象代码如下：   
 
 
-```html
-<!doctype html>
-<html>
-	<head>
-	   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	   <style>
-		   .iemp_m_btn_a {
-				border: 1px solid #4A4A4A;
-				float: left;
-		   }
+	<!doctype html>
+	<html>
+		<head>
+		   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		   <style>
+			   .iemp_m_btn_a {
+					border: 1px solid #4A4A4A;
+					float: left;
+			   }
 
-		   #confirmBtn {
-				float: right;
-		   }
-	   </style>
-	</head>
-	<body>
-	   <div href="#" class="iemp_m_btn_a">
-		   <div id="confirmBtn">过滤</div>
-	   </div>
-	</body>
-</html>
-```
+			   #confirmBtn {
+					float: right;
+			   }
+		   </style>
+		</head>
+		<body>
+		   <div href="#" class="iemp_m_btn_a">
+			   <div id="confirmBtn">过滤</div>
+		   </div>
+		</body>
+	</html>
+
 
 Chrome、IE标准模式 展示如下：
 ![picture in chrome](/img/float-bug-chrome.jpg)
